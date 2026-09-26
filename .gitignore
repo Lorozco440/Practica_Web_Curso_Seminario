@@ -1,0 +1,4 @@
+videojuegos.db
+videojuegos.db-*
+node_modules/
+.DS_Store

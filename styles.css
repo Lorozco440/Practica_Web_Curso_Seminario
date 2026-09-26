@@ -1,0 +1,46 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f5f5f5; color: #222; font: 1rem/1.5 Arial, sans-serif; }
+main { max-width: 1150px; margin: auto; padding: 32px 20px; }
+h1 { font-size: 1.8rem; margin: 0 0 6px; }
+h2 { font-size: 1.15rem; margin: 0 0 18px; }
+h3 { font-size: 1rem; margin: 24px 0 8px; }
+header { margin-bottom: 24px; }
+header p, .nota, footer { color: #595959; }
+header p { margin: 0; }
+.formularios { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+section { background: #fff; border: 1px solid #d5d5d5; border-radius: 5px; padding: 22px; margin-bottom: 20px; min-width: 0; }
+form { display: grid; gap: 8px; }
+label { font-size: .9rem; font-weight: bold; }
+input, select, button { font: inherit; border: 1px solid #aaa; border-radius: 3px; padding: 9px 10px; min-width: 0; }
+input, select { width: 100%; background: #fff; color: #222; margin-bottom: 6px; }
+button { background: #292929; color: white; border-color: #292929; cursor: pointer; margin-top: 6px; }
+button:hover { background: #444; }
+button:disabled { background: #e5e5e5; border-color: #ccc; color: #666; cursor: not-allowed; }
+:focus-visible { outline: 3px solid #555; outline-offset: 3px; }
+.nota { font-size: .9rem; margin: 8px 0 0; }
+#personas { margin: 0; padding-left: 20px; max-height: 170px; overflow-y: auto; overflow-wrap: anywhere; }
+#mensaje { margin: 0; }
+#mensaje:not(:empty) { background: #eee; border-left: 4px solid #444; padding: 12px 16px; margin-bottom: 20px; }
+#mensaje.error { border-left-color: #a12626; color: #852020; }
+.encabezado { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.encabezado .nota { margin: 0 0 18px; }
+.tabla { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+th, td { padding: 12px 10px; border-bottom: 1px solid #ddd; vertical-align: top; overflow-wrap: anywhere; max-width: 260px; }
+th { background: #f6f6f6; font-size: .9rem; }
+td { font-size: .95rem; }
+td button { background: white; color: #222; font-size: .9rem; padding: 5px 10px; margin: 0; }
+td button:hover { background: #eee; }
+.estado { display: inline-block; border: 1px solid #aaa; border-radius: 3px; padding: 2px 8px; font-size: .9rem; white-space: nowrap; }
+.disponible { background: #dcfce7; border-color: #15803d; color: #14532d; }
+.prestado { background: #fef9c3; border-color: #a16207; color: #713f12; }
+.devuelto { background: #fee2e2; border-color: #b91c1c; color: #7f1d1d; }
+.vacio { color: #666; padding: 22px 10px; }
+footer { font-size: .9rem; padding-bottom: 12px; }
+@media (max-width: 800px) {
+  .formularios { grid-template-columns: 1fr; gap: 0; }
+  main { padding: 24px 14px; }
+  section { padding: 18px; }
+  h1 { font-size: 1.5rem; }
+  table { min-width: 620px; }
+}

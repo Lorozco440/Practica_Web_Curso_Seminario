@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Administra tu colección de videojuegos y sus préstamos.">
+  <title>Colección de videojuegos</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='3' width='22' height='26' rx='3' fill='%23222222'/%3E%3Cpath d='M10 10h12M10 16h12M10 22h7' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Colección de videojuegos</h1>
+      <p>Registrar los juegos para lleva el control de los préstamos.</p>
+    </header>
+
+    <p id="mensaje" role="status" aria-live="polite"></p>
+
+    <div class="formularios">
+      <section aria-labelledby="titulo-juego">
+        <h2 id="titulo-juego">Registrar juego</h2>
+        <form id="form-juego">
+          <label for="titulo">Título</label>
+          <input id="titulo" name="titulo" required maxlength="100" placeholder="Ejemplo Mario Bross">
+          <label for="plataforma">Plataforma</label>
+          <input id="plataforma" name="plataforma" required maxlength="60" placeholder="Ejemplo Nintendo Switch">
+          <label for="genero">Género</label>
+          <input id="genero" name="genero" required maxlength="60" placeholder="Ejemplo Aventura">
+          <button type="submit">Guardar juego</button>
+        </form>
+      </section>
+
+      <section aria-labelledby="titulo-persona">
+        <h2 id="titulo-persona">Registrar persona</h2>
+        <form id="form-persona">
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" name="nombre" required maxlength="100" autocomplete="name" placeholder="Ejemplo Ana López">
+          <button type="submit">Guardar persona</button>
+        </form>
+        <h3>Personas registradas</h3>
+        <ul id="personas"></ul>
+      </section>
+
+      <section aria-labelledby="titulo-prestamo">
+        <h2 id="titulo-prestamo">Realizar préstamo</h2>
+        <form id="form-prestamo">
+          <label for="juego">Juego disponible</label>
+          <select id="juego" name="juego" required></select>
+          <label for="persona">Persona</label>
+          <select id="persona" name="persona" required></select>
+          <label for="fecha">Fecha del préstamo</label>
+          <input id="fecha" name="fecha" type="date" required>
+          <button id="prestar" type="submit">Registrar préstamo</button>
+          <p id="ayuda-prestamo" class="nota"></p>
+        </form>
+      </section>
+    </div>
+
+    <section aria-labelledby="titulo-coleccion">
+      <div class="encabezado">
+        <h2 id="titulo-coleccion">Mis juegos</h2>
+        <p id="resumen" class="nota"></p>
+      </div>
+      <div class="tabla" tabindex="0" role="region" aria-label="Colección de juegos">
+        <table>
+          <thead><tr><th scope="col">Título</th><th scope="col">Plataforma</th><th scope="col">Género</th><th scope="col">Estado</th><th scope="col">Prestado a</th><th scope="col">Acción</th></tr></thead>
+          <tbody id="juegos"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="titulo-historial">
+      <h2 id="titulo-historial">Historial de préstamos</h2>
+      <div class="tabla" tabindex="0" role="region" aria-label="Historial de préstamos">
+        <table>
+          <thead><tr><th scope="col">Juego</th><th scope="col">Persona</th><th scope="col">Préstamo</th><th scope="col">Devolución</th><th scope="col">Estado</th></tr></thead>
+          <tbody id="historial"></tbody>
+        </table>
+      </div>
+    </section>
+    <footer>Luis Armando Orozco Cifuentes 1190-22-102</footer>
+    <footer>Práctica Desarrollo Web
+  </main>
+</body>
+</html>
